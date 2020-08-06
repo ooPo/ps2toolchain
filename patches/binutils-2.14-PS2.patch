@@ -1,7 +1,7 @@
-diff --git a/a/Makefile.in b/b/Makefile.in
+diff --git a/Makefile.in b/Makefile.in
 index 561dc76..0ec7e3c 100644
---- a/a/Makefile.in
-+++ b/b/Makefile.in
+--- a/Makefile.in
++++ b/Makefile.in
 @@ -191,13 +191,13 @@ M4 = `if [ -f $$r/m4/m4 ] ; \
  	then echo $$r/m4/m4 ; \
  	else echo ${DEFAULT_M4} ; fi`
@@ -19,10 +19,10 @@ index 561dc76..0ec7e3c 100644
          then echo makeinfo; else echo $$s/missing makeinfo; fi; fi`
  
  # This just becomes part of the MAKEINFO definition passed down to
-diff --git a/a/bfd/archures.c b/b/bfd/archures.c
+diff --git a/bfd/archures.c b/bfd/archures.c
 index 3d473c3..2c6cbfc 100644
---- a/a/bfd/archures.c
-+++ b/b/bfd/archures.c
+--- a/bfd/archures.c
++++ b/bfd/archures.c
 @@ -137,6 +137,7 @@ DESCRIPTION
  .#define bfd_mach_mips5000		5000
  .#define bfd_mach_mips5400		5400
@@ -43,10 +43,10 @@ index 3d473c3..2c6cbfc 100644
  .  bfd_arch_i386,      {* Intel 386 *}
  .#define bfd_mach_i386_i386 1
  .#define bfd_mach_i386_i8086 2
-diff --git a/a/bfd/bfd-in2.h b/b/bfd/bfd-in2.h
+diff --git a/bfd/bfd-in2.h b/bfd/bfd-in2.h
 index 9b6b5a3..3fde2a0 100644
---- a/a/bfd/bfd-in2.h
-+++ b/b/bfd/bfd-in2.h
+--- a/bfd/bfd-in2.h
++++ b/bfd/bfd-in2.h
 @@ -1605,6 +1605,7 @@ enum bfd_architecture
  #define bfd_mach_mips5000              5000
  #define bfd_mach_mips5400              5400
@@ -97,10 +97,10 @@ index 9b6b5a3..3fde2a0 100644
  
  /* i386/elf relocations  */
    BFD_RELOC_386_GOT32,
-diff --git a/a/bfd/config.bfd b/b/bfd/config.bfd
+diff --git a/bfd/config.bfd b/bfd/config.bfd
 index fa2e9ae..339ed25 100755
---- a/a/bfd/config.bfd
-+++ b/b/bfd/config.bfd
+--- a/bfd/config.bfd
++++ b/bfd/config.bfd
 @@ -63,6 +63,9 @@ z8k*)	         targ_archs=bfd_z8k_arch ;;
  *)	         targ_archs=bfd_${targ_cpu}_arch ;;
  esac
@@ -133,10 +133,10 @@ index fa2e9ae..339ed25 100755
    mips*-*-none)
      targ_defvec=bfd_elf32_bigmips_vec
      targ_selvecs="bfd_elf32_littlemips_vec bfd_elf64_bigmips_vec bfd_elf64_littlemips_vec"
-diff --git a/a/bfd/configure b/b/bfd/configure
+diff --git a/bfd/configure b/bfd/configure
 index 5dca0f1..26532c2 100755
---- a/a/bfd/configure
-+++ b/b/bfd/configure
+--- a/bfd/configure
++++ b/bfd/configure
 @@ -6046,6 +6046,8 @@ for i in $selvecs ; do
  done
  selvecs="$f"
@@ -146,10 +146,10 @@ index 5dca0f1..26532c2 100755
  
  # uniq the associated vectors in all the configured targets.
  f=""
-diff --git a/a/bfd/configure.in b/b/bfd/configure.in
+diff --git a/bfd/configure.in b/bfd/configure.in
 index 7774871..4300f4a 100644
---- a/a/bfd/configure.in
-+++ b/b/bfd/configure.in
+--- a/bfd/configure.in
++++ b/bfd/configure.in
 @@ -508,6 +508,8 @@ for i in $selvecs ; do
  done
  selvecs="$f"
@@ -159,10 +159,10 @@ index 7774871..4300f4a 100644
  
  # uniq the associated vectors in all the configured targets.
  f=""
-diff --git a/a/bfd/cpu-mips.c b/b/bfd/cpu-mips.c
+diff --git a/bfd/cpu-mips.c b/bfd/cpu-mips.c
 index 13355c5..b0b3220 100644
---- a/a/bfd/cpu-mips.c
-+++ b/b/bfd/cpu-mips.c
+--- a/bfd/cpu-mips.c
++++ b/bfd/cpu-mips.c
 @@ -75,6 +75,7 @@ enum
    I_mips5000,
    I_mips5400,
@@ -201,10 +201,10 @@ index 13355c5..b0b3220 100644
    N (64, 64, bfd_mach_mips_sb1, "mips:sb1",       FALSE, 0),
  };
  
-diff --git a/a/bfd/elf.c b/b/bfd/elf.c
+diff --git a/bfd/elf.c b/bfd/elf.c
 index 7e1bacd..145d23f 100644
---- a/a/bfd/elf.c
-+++ b/b/bfd/elf.c
+--- a/bfd/elf.c
++++ b/bfd/elf.c
 @@ -2214,7 +2214,7 @@ _bfd_elf_make_section_from_phdr (abfd, hdr, index, typename)
    newsect->_raw_size = hdr->p_filesz;
    newsect->filepos = hdr->p_offset;
@@ -314,10 +314,10 @@ index 7e1bacd..145d23f 100644
  	{
  	  BFD_ASSERT (! m->includes_filehdr && ! m->includes_phdrs);
  	  p->p_offset = m->sections[0]->filepos;
-diff --git a/a/bfd/elf32-mips.c b/b/bfd/elf32-mips.c
+diff --git a/bfd/elf32-mips.c b/bfd/elf32-mips.c
 index adf057b..d4de4a7 100644
---- a/a/bfd/elf32-mips.c
-+++ b/b/bfd/elf32-mips.c
+--- a/bfd/elf32-mips.c
++++ b/bfd/elf32-mips.c
 @@ -75,6 +75,8 @@ static bfd_reloc_status_type mips16_jump_reloc
    PARAMS ((bfd *, arelent *, asymbol *, PTR, asection *, bfd *, char **));
  static bfd_reloc_status_type mips16_gprel_reloc
@@ -502,10 +502,10 @@ index adf057b..d4de4a7 100644
      case R_MIPS_GNU_VTINHERIT:
        return &elf_mips_gnu_vtinherit_howto;
      case R_MIPS_GNU_VTENTRY:
-diff --git a/a/bfd/elflink.h b/b/bfd/elflink.h
+diff --git a/bfd/elflink.h b/bfd/elflink.h
 index 9b7bcff..ffe02e6 100644
---- a/a/bfd/elflink.h
-+++ b/b/bfd/elflink.h
+--- a/bfd/elflink.h
++++ b/bfd/elflink.h
 @@ -7238,9 +7238,18 @@ elf_link_input_bfd (finfo, input_bfd)
  			 elf_link_output_extsym that this symbol is
  			 used by a reloc.  */
@@ -536,10 +536,10 @@ index 9b7bcff..ffe02e6 100644
  			}
  
  		      /* Adjust the addend according to where the
-diff --git a/a/bfd/elfxx-mips.c b/b/bfd/elfxx-mips.c
+diff --git a/bfd/elfxx-mips.c b/bfd/elfxx-mips.c
 index 9d86f3b..ecb0df8 100644
---- a/a/bfd/elfxx-mips.c
-+++ b/b/bfd/elfxx-mips.c
+--- a/bfd/elfxx-mips.c
++++ b/bfd/elfxx-mips.c
 @@ -4064,6 +4064,9 @@ _bfd_elf_mips_mach (flags)
      case E_MIPS_MACH_5500:
        return bfd_mach_mips5500;
@@ -664,10 +664,10 @@ index 9d86f3b..ecb0df8 100644
        ok = FALSE;
      }
    else if (!mips_mach_extends_p (bfd_get_mach (ibfd), bfd_get_mach (obfd)))
-diff --git a/a/bfd/libbfd.h b/b/bfd/libbfd.h
+diff --git a/bfd/libbfd.h b/bfd/libbfd.h
 index 9bbdebd..fdef23c 100644
---- a/a/bfd/libbfd.h
-+++ b/b/bfd/libbfd.h
+--- a/bfd/libbfd.h
++++ b/bfd/libbfd.h
 @@ -872,6 +872,7 @@ static const char *const bfd_reloc_code_real_names[] = { "@@uninitialized@@",
    "BFD_RELOC_MIPS_REL16",
    "BFD_RELOC_MIPS_RELGOT",
@@ -687,10 +687,10 @@ index 9bbdebd..fdef23c 100644
  
    "BFD_RELOC_386_GOT32",
    "BFD_RELOC_386_PLT32",
-diff --git a/a/bfd/reloc.c b/b/bfd/reloc.c
+diff --git a/bfd/reloc.c b/bfd/reloc.c
 index 6aea881..3aa7853 100644
---- a/a/bfd/reloc.c
-+++ b/b/bfd/reloc.c
+--- a/bfd/reloc.c
++++ b/bfd/reloc.c
 @@ -2128,6 +2128,8 @@ ENUMX
    BFD_RELOC_MIPS_RELGOT
  ENUMX
@@ -728,10 +728,10 @@ index 6aea881..3aa7853 100644
  
  ENUM
    BFD_RELOC_386_GOT32
-diff --git a/a/config.guess b/b/config.guess
+diff --git a/config.guess b/config.guess
 index 6bdac8d..e94095c 100755
---- a/a/config.guess
-+++ b/b/config.guess
+--- a/config.guess
++++ b/config.guess
 @@ -1,13 +1,12 @@
  #! /bin/sh
  # Attempt to guess a canonical system name.
@@ -3023,10 +3023,10 @@ index 6bdac8d..e94095c 100755
  # time-stamp-start: "timestamp='"
  # time-stamp-format: "%:y-%02m-%02d"
  # time-stamp-end: "'"
-diff --git a/a/config.sub b/b/config.sub
+diff --git a/config.sub b/config.sub
 index fe4f1ed..e52c4c5 100755
---- a/a/config.sub
-+++ b/b/config.sub
+--- a/config.sub
++++ b/config.sub
 @@ -228,7 +228,7 @@ case $basic_machine in
  	| a29k \
  	| alpha | alphaev[4-8] | alphaev56 | alphaev6[78] | alphapca5[67] \
@@ -3095,10 +3095,10 @@ index fe4f1ed..e52c4c5 100755
  	# Remember, each alternative MUST END IN *, to match a version number.
  		;;
  	-qnx*)
-diff --git a/a/configure b/b/configure
+diff --git a/configure b/configure
 index b408242..3ddae6b 100755
---- a/a/configure
-+++ b/b/configure
+--- a/configure
++++ b/configure
 @@ -1116,6 +1116,9 @@ case "${target}" in
    d30v-*-*)
      noconfigdirs="$noconfigdirs ${libgcj}"
@@ -3109,10 +3109,10 @@ index b408242..3ddae6b 100755
    fr30-*-elf*)
      noconfigdirs="$noconfigdirs ${libgcj}"
      ;;
-diff --git a/a/configure.in b/b/configure.in
+diff --git a/configure.in b/configure.in
 index bfa3b2f..3011454 100644
---- a/a/configure.in
-+++ b/b/configure.in
+--- a/configure.in
++++ b/configure.in
 @@ -456,6 +456,9 @@ case "${target}" in
    d30v-*-*)
      noconfigdirs="$noconfigdirs ${libgcj}"
@@ -3123,11 +3123,11 @@ index bfa3b2f..3011454 100644
    fr30-*-elf*)
      noconfigdirs="$noconfigdirs ${libgcj}"
      ;;
-diff --git a/b/gas/config/tc-dvp.c b/b/gas/config/tc-dvp.c
+diff --git a/b/gas/config/tc-dvp.c b/gas/config/tc-dvp.c
 new file mode 100644
 index 0000000..fa1cdbb
 --- /dev/null
-+++ b/b/gas/config/tc-dvp.c
++++ b/gas/config/tc-dvp.c
 @@ -0,0 +1,3441 @@
 +/* tc-dvp.c -- Assembler for the DVP
 +   Copyright (C) 1997, 1998 Free Software Foundation.
@@ -6570,11 +6570,11 @@ index 0000000..fa1cdbb
 +{
 +  do_s_func (end_p, VU_LABEL_PREFIX);
 +}
-diff --git a/b/gas/config/tc-dvp.h b/b/gas/config/tc-dvp.h
+diff --git a/b/gas/config/tc-dvp.h b/gas/config/tc-dvp.h
 new file mode 100644
 index 0000000..dca3e69
 --- /dev/null
-+++ b/b/gas/config/tc-dvp.h
++++ b/gas/config/tc-dvp.h
 @@ -0,0 +1,105 @@
 +/* tc-dvp.h -- Header file for tc-dvp.c.
 +   Copyright (C) 1997, 1998 Free Software Foundation, Inc.
@@ -6681,10 +6681,10 @@ index 0000000..dca3e69
 +  { ".vubss",	SHT_NOBITS,	SHF_ALLOC + SHF_WRITE		}, \
 +  { ".vudata",	SHT_PROGBITS,	SHF_ALLOC + SHF_WRITE		}, \
 +  { ".vutext",	SHT_PROGBITS,	SHF_ALLOC + SHF_EXECINSTR	},
-diff --git a/a/gas/config/tc-mips.c b/b/gas/config/tc-mips.c
+diff --git a/gas/config/tc-mips.c b/gas/config/tc-mips.c
 index 7e4c843..6019a6b 100644
---- a/a/gas/config/tc-mips.c
-+++ b/b/gas/config/tc-mips.c
+--- a/gas/config/tc-mips.c
++++ b/gas/config/tc-mips.c
 @@ -177,6 +177,10 @@ struct mips_set_options
       is passed but can changed if the assembler code uses .set mipsN.  */
    int gp32;
@@ -7816,10 +7816,10 @@ index 7e4c843..6019a6b 100644
    fputc ('\n', stream);
  
    fprintf (stream, _("\
-diff --git a/a/gas/configure b/b/gas/configure
+diff --git a/gas/configure b/gas/configure
 index 0354251..98a5bb7 100755
---- a/a/gas/configure
-+++ b/b/gas/configure
+--- a/gas/configure
++++ b/gas/configure
 @@ -2338,6 +2338,7 @@ for this_target in $target $canon_targets ; do
        m5200)		cpu_type=m68k ;;
        m8*)		cpu_type=m88k ;;
@@ -7853,10 +7853,10 @@ index 0354251..98a5bb7 100755
  
        mmix-*-*)				fmt=elf ;;
        mn10200-*-*)			fmt=elf ;;
-diff --git a/a/gas/configure.in b/b/gas/configure.in
+diff --git a/gas/configure.in b/gas/configure.in
 index 7b7b40e..b244412 100644
---- a/a/gas/configure.in
-+++ b/b/gas/configure.in
+--- a/gas/configure.in
++++ b/gas/configure.in
 @@ -132,6 +132,7 @@ changequote([,])dnl
        m5200)		cpu_type=m68k ;;
        m8*)		cpu_type=m88k ;;
@@ -7882,10 +7882,10 @@ index 7b7b40e..b244412 100644
  
        mmix-*-*)				fmt=elf ;;
        mn10200-*-*)			fmt=elf ;;
-diff --git a/a/gas/symbols.c b/b/gas/symbols.c
+diff --git a/gas/symbols.c b/gas/symbols.c
 index 59658df..e352579 100644
---- a/a/gas/symbols.c
-+++ b/b/gas/symbols.c
+--- a/gas/symbols.c
++++ b/gas/symbols.c
 @@ -1027,6 +1027,7 @@ resolve_symbol_value (symp)
  	      goto exit_dont_set_value;
  	    }
@@ -7894,10 +7894,10 @@ index 59658df..e352579 100644
  		   && seg_left != expr_section)
  	    {
  	      /* If the symbol is an expression symbol, do similarly
-diff --git a/a/include/dis-asm.h b/b/include/dis-asm.h
+diff --git a/include/dis-asm.h b/include/dis-asm.h
 index 392cbf9..425ea8e 100644
---- a/a/include/dis-asm.h
-+++ b/b/include/dis-asm.h
+--- a/include/dis-asm.h
++++ b/include/dis-asm.h
 @@ -242,6 +242,8 @@ extern int print_insn_sh64		PARAMS ((bfd_vma, disassemble_info *));
  extern int print_insn_sh64x_media	PARAMS ((bfd_vma, disassemble_info *));
  extern int print_insn_frv		PARAMS ((bfd_vma, disassemble_info *));
@@ -7907,10 +7907,10 @@ index 392cbf9..425ea8e 100644
  
  extern disassembler_ftype arc_get_disassembler PARAMS ((void *));
  extern disassembler_ftype cris_get_disassembler PARAMS ((bfd *));
-diff --git a/a/include/elf/common.h b/b/include/elf/common.h
+diff --git a/include/elf/common.h b/include/elf/common.h
 index ca79342..1d60022 100644
---- a/a/include/elf/common.h
-+++ b/b/include/elf/common.h
+--- a/include/elf/common.h
++++ b/include/elf/common.h
 @@ -92,6 +92,7 @@
  #define ET_LOOS		0xFE00	/* Operating system-specific */
  #define ET_HIOS		0xFEFF	/* Operating system-specific */
@@ -7927,10 +7927,10 @@ index ca79342..1d60022 100644
  
  #define PT_GNU_EH_FRAME	(PT_LOOS + 0x474e550)
  
-diff --git a/a/include/elf/mips.h b/b/include/elf/mips.h
+diff --git a/include/elf/mips.h b/include/elf/mips.h
 index 44f7cb9..286e637 100644
---- a/a/include/elf/mips.h
-+++ b/b/include/elf/mips.h
+--- a/include/elf/mips.h
++++ b/include/elf/mips.h
 @@ -76,6 +76,13 @@ START_RELOC_NUMBERS (elf_mips_reloc_type)
    /* These relocs are used for the mips16.  */
    RELOC_NUMBER (R_MIPS16_26, 100)
@@ -8031,11 +8031,11 @@ index 44f7cb9..286e637 100644
  /* Masks for the info work of an ODK_EXCEPTIONS descriptor.  */
  #define OEX_FPU_MIN	0x1f	/* FPEs which must be enabled.  */
  #define OEX_FPU_MAX	0x1f00	/* FPEs which may be enabled.  */
-diff --git a/b/include/opcode/dvp.h b/b/include/opcode/dvp.h
+diff --git a/b/include/opcode/dvp.h b/include/opcode/dvp.h
 new file mode 100644
 index 0000000..63f065d
 --- /dev/null
-+++ b/b/include/opcode/dvp.h
++++ b/include/opcode/dvp.h
 @@ -0,0 +1,454 @@
 +/* Opcode table for the DVP.
 +   Copyright 1998 Free Software Foundation, Inc.
@@ -8491,10 +8491,10 @@ index 0000000..63f065d
 +void dvp_opcode_init_tables PARAMS ((int));
 +void dvp_opcode_init_parse PARAMS ((void));
 +void dvp_opcode_init_print PARAMS ((void));
-diff --git a/a/include/opcode/mips.h b/b/include/opcode/mips.h
+diff --git a/include/opcode/mips.h b/include/opcode/mips.h
 index 476c8e3..2044b9a 100644
---- a/a/include/opcode/mips.h
-+++ b/b/include/opcode/mips.h
+--- a/include/opcode/mips.h
++++ b/include/opcode/mips.h
 @@ -164,6 +164,24 @@ Software Foundation, 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *
  #define	OP_OP_SDC2		0x3e
  #define	OP_OP_SDC3		0x3f	/* a.k.a. sd */
@@ -8613,10 +8613,10 @@ index 476c8e3..2044b9a 100644
       || 0)	/* Please keep this term for easier source merging.  */
  
  /* This is a list of macro expanded instructions.
-diff --git a/a/include/splay-tree.h b/b/include/splay-tree.h
+diff --git a/include/splay-tree.h b/include/splay-tree.h
 index 86707fc..e77066a 100644
---- a/a/include/splay-tree.h
-+++ b/b/include/splay-tree.h
+--- a/include/splay-tree.h
++++ b/include/splay-tree.h
 @@ -44,8 +44,13 @@ extern "C" {
     these types, if necessary.  These types should be sufficiently wide
     that any pointer or scalar can be cast to these types, and then
@@ -8631,10 +8631,10 @@ index 86707fc..e77066a 100644
  
  /* Forward declaration for a node in the tree.  */
  typedef struct splay_tree_node_s *splay_tree_node;
-diff --git a/a/ld/Makefile.am b/b/ld/Makefile.am
+diff --git a/ld/Makefile.am b/ld/Makefile.am
 index 1cee856..5fca429 100644
---- a/a/ld/Makefile.am
-+++ b/b/ld/Makefile.am
+--- a/ld/Makefile.am
++++ b/ld/Makefile.am
 @@ -154,6 +154,7 @@ ALL_EMULATIONS = \
  	eelf32_i860.o \
  	eelf32_sparc.o \
@@ -8671,10 +8671,10 @@ index 1cee856..5fca429 100644
  emipslit.c:  $(srcdir)/emulparams/mipslit.sh \
    $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/mips.sc ${GEN_DEPENDS}
  	${GENSCRIPTS} mipslit "$(tdir_mipslit)"
-diff --git a/a/ld/Makefile.in b/b/ld/Makefile.in
+diff --git a/ld/Makefile.in b/ld/Makefile.in
 index cb2e2a4..22803b6 100644
---- a/a/ld/Makefile.in
-+++ b/b/ld/Makefile.in
+--- a/ld/Makefile.in
++++ b/ld/Makefile.in
 @@ -283,6 +283,7 @@ ALL_EMULATIONS = \
  	eelf32iq2000.o \
  	eelf32iq10.o \
@@ -8711,10 +8711,10 @@ index cb2e2a4..22803b6 100644
  emipslit.c:  $(srcdir)/emulparams/mipslit.sh \
    $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/mips.sc ${GEN_DEPENDS}
  	${GENSCRIPTS} mipslit "$(tdir_mipslit)"
-diff --git a/a/ld/configure.tgt b/b/ld/configure.tgt
+diff --git a/ld/configure.tgt b/ld/configure.tgt
 index 1e45cfc..15a97d1 100644
---- a/a/ld/configure.tgt
-+++ b/b/ld/configure.tgt
+--- a/ld/configure.tgt
++++ b/ld/configure.tgt
 @@ -404,8 +404,15 @@ mips*vr4100el-*-elf*)	targ_emul=elf32l4300 ;;
  mips*vr4100-*-elf*)	targ_emul=elf32b4300 ;;
  mips*vr5000el-*-elf*)	targ_emul=elf32l4300 ;;
@@ -8731,21 +8731,21 @@ index 1e45cfc..15a97d1 100644
  mips*el-*-rtems*)	targ_emul=elf32elmip ;;
  mips*-*-rtems*)		targ_emul=elf32ebmip ;;
  mips*el-*-vxworks*)	targ_emul=elf32elmip ;;
-diff --git a/b/ld/emulparams/elf32l5900.sh b/b/ld/emulparams/elf32l5900.sh
+diff --git a/b/ld/emulparams/elf32l5900.sh b/ld/emulparams/elf32l5900.sh
 new file mode 100644
 index 0000000..6282c1b
 --- /dev/null
-+++ b/b/ld/emulparams/elf32l5900.sh
++++ b/ld/emulparams/elf32l5900.sh
 @@ -0,0 +1,4 @@
 +ARCH="mips:5900"
 +OUTPUT_FORMAT="elf32-littlemips"
 +SCRIPT_NAME=ps2dev
 +TEMPLATE_NAME=generic
-diff --git a/b/ld/emulparams/mipsirx.sh b/b/ld/emulparams/mipsirx.sh
+diff --git a/b/ld/emulparams/mipsirx.sh b/ld/emulparams/mipsirx.sh
 new file mode 100644
 index 0000000..cfa08c5
 --- /dev/null
-+++ b/b/ld/emulparams/mipsirx.sh
++++ b/ld/emulparams/mipsirx.sh
 @@ -0,0 +1,8 @@
 +SCRIPT_NAME=irx
 +OUTPUT_FORMAT="elf32-littlemips"
@@ -8755,11 +8755,11 @@ index 0000000..cfa08c5
 +DATA_ADDR=.
 +TEMPLATE_NAME=irx
 +
-diff --git a/b/ld/emultempl/irx.em b/b/ld/emultempl/irx.em
+diff --git a/b/ld/emultempl/irx.em b/ld/emultempl/irx.em
 new file mode 100644
 index 0000000..c0679b2
 --- /dev/null
-+++ b/b/ld/emultempl/irx.em
++++ b/ld/emultempl/irx.em
 @@ -0,0 +1,560 @@
 +# This shell script emits a C file. -*- C -*-
 +# It does some substitutions.
@@ -9321,11 +9321,11 @@ index 0000000..c0679b2
 +  NULL
 +};
 +EOF
-diff --git a/b/ld/scripttempl/irx.sc b/b/ld/scripttempl/irx.sc
+diff --git a/b/ld/scripttempl/irx.sc b/ld/scripttempl/irx.sc
 new file mode 100644
 index 0000000..8b7b721
 --- /dev/null
-+++ b/b/ld/scripttempl/irx.sc
++++ b/ld/scripttempl/irx.sc
 @@ -0,0 +1,121 @@
 +# Link scripts for PlayStation 2 IRXs.
 +
@@ -9448,11 +9448,11 @@ index 0000000..8b7b721
 +}
 +
 +EOF
-diff --git a/b/ld/scripttempl/ps2dev.sc b/b/ld/scripttempl/ps2dev.sc
+diff --git a/b/ld/scripttempl/ps2dev.sc b/ld/scripttempl/ps2dev.sc
 new file mode 100644
 index 0000000..e776cf7
 --- /dev/null
-+++ b/b/ld/scripttempl/ps2dev.sc
++++ b/ld/scripttempl/ps2dev.sc
 @@ -0,0 +1,92 @@
 +cat <<EOF
 +OUTPUT_FORMAT("${OUTPUT_FORMAT}","${OUTPUT_FORMAT}","${OUTPUT_FORMAT}")
@@ -9546,10 +9546,10 @@ index 0000000..e776cf7
 +	PROVIDE(_stack = -1);
 +	PROVIDE(_stack_size = 128 * 1024);
 +}
-diff --git a/a/opcodes/configure b/b/opcodes/configure
+diff --git a/opcodes/configure b/opcodes/configure
 index bb07938..9969106 100755
---- a/a/opcodes/configure
-+++ b/b/opcodes/configure
+--- a/opcodes/configure
++++ b/opcodes/configure
 @@ -4671,6 +4671,7 @@ if test x${all_targets} = xfalse ; then
          bfd_tic4x_arch)         ta="$ta tic4x-dis.lo" ;;
  	bfd_tic54x_arch)	ta="$ta tic54x-dis.lo tic54x-opc.lo" ;;
@@ -9558,10 +9558,10 @@ index bb07938..9969106 100755
  	bfd_v850_arch)		ta="$ta v850-opc.lo v850-dis.lo" ;;
  	bfd_v850e_arch)		ta="$ta v850-opc.lo v850-dis.lo" ;;
  	bfd_v850ea_arch)	ta="$ta v850-opc.lo v850-dis.lo" ;;
-diff --git a/a/opcodes/configure.in b/b/opcodes/configure.in
+diff --git a/opcodes/configure.in b/opcodes/configure.in
 index ea64c84..44c1108 100644
---- a/a/opcodes/configure.in
-+++ b/b/opcodes/configure.in
+--- a/opcodes/configure.in
++++ b/opcodes/configure.in
 @@ -234,6 +234,7 @@ if test x${all_targets} = xfalse ; then
          bfd_tic4x_arch)         ta="$ta tic4x-dis.lo" ;;
  	bfd_tic54x_arch)	ta="$ta tic54x-dis.lo tic54x-opc.lo" ;;
@@ -9570,10 +9570,10 @@ index ea64c84..44c1108 100644
  	bfd_v850_arch)		ta="$ta v850-opc.lo v850-dis.lo" ;;
  	bfd_v850e_arch)		ta="$ta v850-opc.lo v850-dis.lo" ;;
  	bfd_v850ea_arch)	ta="$ta v850-opc.lo v850-dis.lo" ;;
-diff --git a/a/opcodes/disassemble.c b/b/opcodes/disassemble.c
+diff --git a/opcodes/disassemble.c b/opcodes/disassemble.c
 index 1408f39..d1980c1 100644
---- a/a/opcodes/disassemble.c
-+++ b/b/opcodes/disassemble.c
+--- a/opcodes/disassemble.c
++++ b/opcodes/disassemble.c
 @@ -75,7 +75,6 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
  #define INCLUDE_SHMEDIA
  #endif
@@ -9600,11 +9600,11 @@ index 1408f39..d1980c1 100644
        break;
  #endif
  #ifdef ARCH_mmix
-diff --git a/b/opcodes/dvp-dis.c b/b/opcodes/dvp-dis.c
+diff --git a/b/opcodes/dvp-dis.c b/opcodes/dvp-dis.c
 new file mode 100644
 index 0000000..a085466
 --- /dev/null
-+++ b/b/opcodes/dvp-dis.c
++++ b/opcodes/dvp-dis.c
 @@ -0,0 +1,439 @@
 +/* Instruction printing code for the DVP
 +   Copyright (C) 1998 Free Software Foundation, Inc. 
@@ -10045,11 +10045,11 @@ index 0000000..a085466
 +  *insn_buf = bfd_getl32 (buffer);
 +  return 0;
 +}
-diff --git a/b/opcodes/dvp-opc.c b/b/opcodes/dvp-opc.c
+diff --git a/b/opcodes/dvp-opc.c b/opcodes/dvp-opc.c
 new file mode 100644
 index 0000000..5fc26b3
 --- /dev/null
-+++ b/b/opcodes/dvp-opc.c
++++ b/opcodes/dvp-opc.c
 @@ -0,0 +1,3458 @@
 +/* Opcode table for the DVP
 +   Copyright (c) 1998 Free Software Foundation, Inc.
@@ -13509,10 +13509,10 @@ index 0000000..5fc26b3
 +
 +  return NULL;
 +}
-diff --git a/a/opcodes/mips-dis.c b/b/opcodes/mips-dis.c
+diff --git a/opcodes/mips-dis.c b/opcodes/mips-dis.c
 index 1ed436a..02029c3 100644
---- a/a/opcodes/mips-dis.c
-+++ b/b/opcodes/mips-dis.c
+--- a/opcodes/mips-dis.c
++++ b/opcodes/mips-dis.c
 @@ -345,6 +345,8 @@ const struct mips_arch_choice mips_arch_choices[] = {
      mips_cp0_names_numeric, NULL, 0, mips_hwr_names_numeric },
    { "vr5500",	1, bfd_mach_mips5500, CPU_VR5500, ISA_MIPS4,
@@ -13711,10 +13711,10 @@ index 1ed436a..02029c3 100644
    set_default_mips_dis_options (info);
    parse_mips_dis_options (info->disassembler_options);
  
-diff --git a/a/opcodes/mips-opc.c b/b/opcodes/mips-opc.c
+diff --git a/opcodes/mips-opc.c b/opcodes/mips-opc.c
 index 228357a..df7eb88 100644
---- a/a/opcodes/mips-opc.c
-+++ b/b/opcodes/mips-opc.c
+--- a/opcodes/mips-opc.c
++++ b/opcodes/mips-opc.c
 @@ -101,6 +101,7 @@ Software Foundation, 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *
  #define L1	INSN_4010
  #define V1	(INSN_4100 | INSN_4111 | INSN_4120)
